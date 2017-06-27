@@ -1,0 +1,48 @@
+<md-card>
+  <md-card-title>Hi {{currentUser.firstName}}!</md-card-title>
+  <md-card-content>
+      <p>You're logged in Time Tracker</p>
+        <div>
+            <button md-raised-button color="primary" type="button">Punch In</button>
+            <button md-raised-button color="accent" type="button">Punch Out</button>
+        </div>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Take Lunch</md-card-title>
+  <md-card-content>
+      <p>Punch out for lunch</p>
+        <div>
+            <button md-raised-button color="accent" type="button">Lunch Out</button>
+            <button md-raised-button color="primary" type="button">Lunch In</button>
+        </div>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Logout</md-card-title>
+  <md-card-content>
+      <p>Logout of Time Tracker</p>
+        <div>
+            <button md-raised-button color="primary" type="button" routerLink="/login">Logout</button>
+        </div>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>All registered users:</md-card-title>
+  <md-card-content>
+      <ul>
+        <li *ngFor="let user of users">
+          {{user.username}} ({{user.firstName}} {{user.lastName}}) - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+      </ul>
+  </md-card-content>
+</md-card>
+
+<span class="done">
+    <button md-fab>
+      <md-icon>check circle</md-icon>
+    </button>
+</span>

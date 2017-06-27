@@ -1,0 +1,22 @@
+<md-card>
+    <md-card-title>Login</md-card-title>
+    <md-card-content>
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+         <p>
+            <md-input-container>
+                <input mdInput placeholder="User Name" dividerColor="accent" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                <md-error>Username is required</md-error>
+            </md-input-container>
+            </p>
+
+            <p>
+            <md-input-container>
+                <input mdInput placeholder="Password" dividerColor="accent" name="password" type="password" [(ngModel)]="model.password" #password="ngModel" required />
+                <md-error>Password is required</md-error>
+            </md-input-container>
+            </p>
+            <button md-raised-button color="primary" type="submit">Login</button>
+            <button md-raised-button color="accent" type="button" routerLink="/register">Register</button>
+    </form>
+    </md-card-content>
+</md-card>
